@@ -35,13 +35,14 @@ class Album
   end
 
 
-  def show(instancia)
+  def show(instancia, clase)
     @sparql = SPARQL::Client.new(url)
     text_query = "
         PREFIX : <http://www.uniandes.web.semantica.example.org/201528630/etapa2ontology#>
         SELECT ?rel ?p
         WHERE {
            :#{instancia} ?rel ?p .
+           ?rel rdfs:domain :#{clase}
             FILTER( ?p != owl:NamedIndividual )
         }
     "

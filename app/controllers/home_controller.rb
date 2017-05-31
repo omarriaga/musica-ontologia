@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
   def instancias
     @clase = params[:clase]
+    session[:clase] = @clase
     @page = params[:page].to_i
     album = Album.new
     if @page
@@ -21,7 +22,7 @@ class HomeController < ApplicationController
   def show
     @instancia = params[:instancias]
     album = Album.new
-    @list = album.show(@instancia)
+    @list = album.show(@instancia, session[:clase])
   end
 
 end
