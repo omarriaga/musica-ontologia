@@ -42,7 +42,6 @@ class Album
         SELECT ?rel ?p
         WHERE {
            :#{instancia} ?rel ?p .
-           ?rel rdfs:domain :#{clase}
             FILTER( ?p != owl:NamedIndividual )
         }
     "
