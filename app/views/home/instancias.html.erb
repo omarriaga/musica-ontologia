@@ -1,0 +1,20 @@
+<div class="ui orange segment">
+  <h2 class="ui header"><%= @clase %></h2>
+  <table class="ui table">
+    <thead>
+    <tr>
+      <th>instancia</th>
+      <th>Nombre</th>
+    </tr>
+    <div> <%= link_to('««anterior', instancias_url(@clase, {page: (@page-1)})) if @page.to_i > 1%>  <%= link_to('siguiente»»', instancias_url(@clase, {page: (@page+1)}))%> </div>
+    </thead>
+    <tbody>
+    <% @list.each do |solution| %>
+        <tr>
+          <td><%= link_to  solution[:d].fragment, show_url(solution[:d].fragment)  %></td>
+          <td><%= solution[:name].value %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

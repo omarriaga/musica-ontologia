@@ -1,0 +1,14 @@
+<div class="ui orange segment">
+  <h2 class="ui header"><%= @instancia %></h2>
+  <%= link_to 'Atras', :back, class: 'ui button' %>
+  <table class="ui table">
+    <tbody>
+    <% @list.each do |solution| %>
+        <tr>
+          <td><strong><%= solution[:rel].fragment.humanize %></strong></td>
+          <td><%= define_property(solution[:p])%></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

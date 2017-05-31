@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HelmReport</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="ui top fixed menu">
+  <div class="item">
+    <%= link_to 'Musica', root_path %>
+  </div>
+</div>
+<div class="ui main container">
+  <%= semantic_flash %>
+  <%= yield %>
+</div>
+</body>
+</html>

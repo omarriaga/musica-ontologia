@@ -1,0 +1,19 @@
+<div class="ui orange segment">
+  <h2 class="ui header" >Ontologia Musica</h2>
+  <table class="ui table">
+    <thead>
+    <tr>
+      <th>Tema</th>
+      <th>instancias</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @list.each do |solution| %>
+        <tr>
+          <td><%= link_to solution[:clase].fragment, instancias_url(solution[:clase].fragment) %></td>
+          <td><%= solution[:count].value %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
